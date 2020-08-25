@@ -1,5 +1,7 @@
 package com.cluster.platform.redis;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author Reace
  * @createTime 05 22:31
@@ -37,4 +39,9 @@ public interface ICache {
      * @param hashValue 值
      */
     public <T> void putHashValue(String key, String hashKey, T hashValue);
+
+
+    public <T> void putOpsValue(String key, Integer v, Long l, TimeUnit t);
+
+    public <T> T getOpsValues(String key);
 }

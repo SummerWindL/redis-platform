@@ -1,0 +1,5 @@
+com\cluster\platform\redis\ICache.class
+com\cluster\platform\redis\RedisAutoConfiguration.class
+com\cluster\platform\redis\RedisRepository.class
+com\cluster\platform\redis\PlatformRedisApplication.class
+com\cluster\platform\redis\constants\CacheKeyConstants.class

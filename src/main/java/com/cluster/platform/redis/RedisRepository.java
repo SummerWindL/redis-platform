@@ -4,14 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisServerCommands;
-import org.springframework.data.redis.core.HashOperations;
-import org.springframework.data.redis.core.ListOperations;
-import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
 import java.nio.charset.Charset;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 
@@ -227,6 +225,29 @@ public class RedisRepository implements ICache {
             }
             return maps;
         });
+    }
+
+    /**
+     * redis 数据结构 : 对String操作
+     *
+     * @param key       redis 主键
+     */
+    @Override
+    public <T> void putOpsValue(String key, Integer v, Long l, TimeUnit t) {
+        LOGGER.debug("[redisTemplate redis]  putOpsValue()  key={},Value={},time={},TimeUnit={} ", key, v,l,t);
+        opsForValue().set(key,v,l,t);
+    }
+
+
+    private <T> ValueOperations<String, Object> opsForValue() {
+        return redisTemplate.opsForValue();
+    }
+
+
+    @Override
+    public <T> T getOpsValues(String key) {
+        LOGGER.debug("[redisTemplate redis]  getHashValues()  key={}", key);
+        return (T) opsForValue().get(key);
     }
 
     /**
