@@ -11,8 +11,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
+        <!--<spring.boot.version>2.2.6.RELEASE</spring.boot.version>-->
         <!--<spring.boot.version>1.5.6.RELEASE</spring.boot.version>-->
+        <spring.boot.version>2.5.4</spring.boot.version>
     </properties>
     <build>
         <plugins>
@@ -71,6 +72,11 @@
             <groupId>com.lemon</groupId>
             <artifactId>platform-common-util</artifactId>
             <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
