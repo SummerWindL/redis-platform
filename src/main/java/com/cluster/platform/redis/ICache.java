@@ -1,5 +1,7 @@
 package com.cluster.platform.redis;
 
+import org.springframework.data.redis.core.ClusterOperations;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -44,4 +46,12 @@ public interface ICache {
     public <T> void putOpsValue(String key, Integer v, Long l, TimeUnit t);
 
     public <T> T getOpsValues(String key);
+
+    /**
+     * 获取集群操作处理类
+     * @author Advance
+     * @date 2022/2/17 18:44
+     * @return org.springframework.data.redis.core.ClusterOperations
+     */
+    public ClusterOperations getClusterOperations();
 }

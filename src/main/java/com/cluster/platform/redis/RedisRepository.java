@@ -1,5 +1,6 @@
 package com.cluster.platform.redis;
 
+import com.platform.common.util.AssertUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -520,5 +521,10 @@ public class RedisRepository implements ICache {
      */
     public <T> void insertInList(String key, long index, T value) {
         opsForList().set(key, index, value);
+    }
+
+    public ClusterOperations getClusterOperations(){
+       AssertUtil.notNull(redisTemplate,"redisTemplate为空！");
+       return redisTemplate.opsForCluster();
     }
 }
