@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import com.cluster.platform.redis.constants.RedisConstant;
 import com.cluster.platform.redis.data.IRedisHash;
 import com.cluster.platform.redis.data.RedisHash;
-import com.cluster.platform.redis.util.JoyinRedisUtil;
+import com.cluster.platform.redis.util.RedisUtil;
 import com.cluster.platform.redis.util.ProducerUtils;
 import com.platform.common.util.StringUtil;
 import org.slf4j.Logger;
@@ -465,9 +464,9 @@ abstract class PipeBaseService<K, H, V> {
                 setCluster(true);
                 JedisClusterConnection clusterConn = (JedisClusterConnection)connection;
                 cluster = clusterConn.getNativeConnection();
-                JedisSlotBasedConnectionHandler connectionHandler = JoyinRedisUtil.getFieldValue(
+                JedisSlotBasedConnectionHandler connectionHandler = RedisUtil.getFieldValue(
                         cluster, FIELD_CONNECTION_HANDLER);
-                cache = JoyinRedisUtil.getFieldValue(connectionHandler, FIELD_CACHE);
+                cache = RedisUtil.getFieldValue(connectionHandler, FIELD_CACHE);
             }
         }
         catch (Exception e) {
