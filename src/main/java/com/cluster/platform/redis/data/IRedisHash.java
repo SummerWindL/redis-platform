@@ -3,6 +3,7 @@ package com.cluster.platform.redis.data;
 import java.io.Serializable;
 
 /**
+ * Redis hash data
  * @author: Advance
  * @create: 2022-03-21 14:15
  * @since V1.0.0

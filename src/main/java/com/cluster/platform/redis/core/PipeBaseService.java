@@ -37,6 +37,7 @@ import redis.clients.jedis.ScanResult;
 import redis.clients.util.JedisClusterCRC16;
 
 /**
+ * redis write or read or delete with pipeline for hash data
  * @author Advance
  * @date 2022年03月21日 14:04
  * @since V1.0.0

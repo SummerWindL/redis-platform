@@ -1,6 +1,7 @@
 package com.cluster.platform.redis.data;
 
 /**
+ * Redis hash存储类型
  * @author Advance
  * @date 2022年03月21日 14:16
  * @since V1.0.0
