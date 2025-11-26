@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <localRepository>E:\fyl\mvn\repo</localRepository>
+  <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <name>nexus maven</name>
+      <url>file://E:\fyl\mvn\repo</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+    <!-- 新增阿里云镜像 -->
+    <mirror>
+      <id>aliyunmaven</id>
+      <mirrorOf>central</mirrorOf>
+      <name>阿里云公共仓库</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>
+  </mirrors>
+</settings>
